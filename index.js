@@ -173,10 +173,7 @@ async function saveKeysToMongoDB(keys) {
         console.log(
             `${saveCount} Inserted ${result.insertedCount} keys into MongoDB.`,
         );
-        if (saveCount >= proggressCount) {
-            await closeMongoClient();
-            process.exit(0);
-        }
+
     } catch (error) {
         console.error(`Failed to save keys to MongoDB: ${error.message}`);
     }
